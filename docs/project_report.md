@@ -18,7 +18,7 @@ Department of Computer Engineering & Computer Science
 **Team Number:** Group 7
 **Instructor:** Min He
 **Submission Date:** 5/13/2026
-**Team Members:** Alfredo, Paris, Gerald, Adrian
+**Team Members:** Alfredo
 
 </div>
 

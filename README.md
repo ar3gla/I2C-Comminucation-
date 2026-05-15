@@ -51,4 +51,4 @@ This project implements I2C communication between a microcontroller and multiple
 
 ## Team Members
 
-Alfredo, Paris, Gerald, Adrian
+Alfredo
