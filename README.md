@@ -1,4 +1,4 @@
-# I2C Communication – Embedded Systems Project
+﻿# I2C Communication – Embedded Systems Project
 
 **Course:** CECS 447 – Embedded Systems  
 **Project:** Embedded Systems Integration – Color Detection & IMU Servo Control  
@@ -51,4 +51,4 @@ This project implements I2C communication between a microcontroller and multiple
 
 ## Team Members
 
-Alfredo
+Alfredo Regla

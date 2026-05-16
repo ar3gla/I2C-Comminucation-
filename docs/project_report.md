@@ -1,4 +1,4 @@
-
+﻿
 ---
 
 <div align="center">
@@ -18,7 +18,7 @@ Department of Computer Engineering & Computer Science
 **Team Number:** Group 7
 **Instructor:** Min He
 **Submission Date:** 5/13/2026
-**Team Members:** Alfredo
+**Team Members:** Alfredo Regla
 
 </div>
 
@@ -158,15 +158,15 @@ Design A was selected. Using a single hardware I2C bus minimizes GPIO consumptio
 
 ## 5.1 Module List and Responsibility
 
-- **WTimer (WTimer.c / WTimer.h):** Provides 1 ms delay using a hardware wide timer (WTIMER1–5). Used by all other modules for initialization delays and main-loop timing. *(Alfredo, Paris)*
-- **ButtonLED (ButtonLED.c / ButtonLED.h):** Initializes onboard RGB LEDs (PF1/PF2/PF3) and push buttons SW1 (PF4) and SW2 (PF0). Handles mode toggling and LED cycling via direct GPIO reads. *(Gerald, Adrian, Alfredo)*
-- **UART0 (UART0.c / UART0.h):** Initializes UART0 on PA0/PA1 at a team-chosen baud rate (not 57600). Provides functions to transmit characters, strings, integers, and floats to a PC terminal. *(Paris, Gerald, Adrian, Alfredo)*
-- **I2C (I2C.c / I2C.h):** Initializes hardware I2C at 100 kHz Standard Mode. Manages all read/write transactions to the three external I2C slave devices on the shared SDA/SCL bus. *(Gerald, Adrian, Alfredo)*
+- **WTimer (WTimer.c / WTimer.h):** Provides 1 ms delay using a hardware wide timer (WTIMER1–5). Used by all other modules for initialization delays and main-loop timing. *(Alfredo Regla, Paris)*
+- **ButtonLED (ButtonLED.c / ButtonLED.h):** Initializes onboard RGB LEDs (PF1/PF2/PF3) and push buttons SW1 (PF4) and SW2 (PF0). Handles mode toggling and LED cycling via direct GPIO reads. *(Gerald, Adrian, Alfredo Regla)*
+- **UART0 (UART0.c / UART0.h):** Initializes UART0 on PA0/PA1 at a team-chosen baud rate (not 57600). Provides functions to transmit characters, strings, integers, and floats to a PC terminal. *(Paris, Gerald, Adrian, Alfredo Regla)*
+- **I2C (I2C.c / I2C.h):** Initializes hardware I2C at 100 kHz Standard Mode. Manages all read/write transactions to the three external I2C slave devices on the shared SDA/SCL bus. *(Gerald, Adrian, Alfredo Regla)*
 - **TCS34725 (TCS34727.c / TCS34727.h):** Initializes the RGB color sensor and verifies its presence via the ID register (0x44). Reads 16-bit RGB and clear channel values and returns the dominant color. *(Paris, Gerald)*
-- **MPU6050 (MPU6050.c / MPU6050.h):** Initializes the IMU and confirms its presence via WHO_AM_I (0x68). Reads 3-axis accelerometer data and computes the roll angle used to position the servo. *(Adrian, Alfredo)*
+- **MPU6050 (MPU6050.c / MPU6050.h):** Initializes the IMU and confirms its presence via WHO_AM_I (0x68). Reads 3-axis accelerometer data and computes the roll angle used to position the servo. *(Adrian, Alfredo Regla)*
 - **LCD (LCD.c / LCD.h):** Initializes the 16×2 LCD via its I2C backpack. Writes color name and angle to the display; updates are throttled to 1 Hz to prevent I2C flickering. *(Paris)*
-- **Servo (Servo.c / Servo.h):** Configures hardware PWM at 50 Hz and maps a requested angle (−90° to +90°) to the corresponding pulse width. PWM module selected from M0PWM1–7 or M1PWM0–7 (M0PWM0 not used). *(Gerald, Adrian, Alfredo)*
-- **app.c:** Top-level application. Initializes all 8 modules in order, then runs the main loop coordinating the 100 ms sensor sampling and 1 second output cadence. *(Alfredo, Gerald)*
+- **Servo (Servo.c / Servo.h):** Configures hardware PWM at 50 Hz and maps a requested angle (−90° to +90°) to the corresponding pulse width. PWM module selected from M0PWM1–7 or M1PWM0–7 (M0PWM0 not used). *(Gerald, Adrian, Alfredo Regla)*
+- **app.c:** Top-level application. Initializes all 8 modules in order, then runs the main loop coordinating the 100 ms sensor sampling and 1 second output cadence. *(Alfredo Regla, Gerald)*
 
 ## 5.2 Module Test Strategy
 
@@ -202,31 +202,31 @@ Each module was tested in isolation using compile-time preprocessor flags (`#def
 
 | Module | Primary Developer |
 |--------|-----------------|
-| WTimer – WTIMER_Init (RQ-01) | Alfredo |
+| WTimer – WTIMER_Init (RQ-01) | Alfredo Regla |
 | WTimer – WTIMER_Delay (RQ-02) | Paris |
 | ButtonLED – LED_Blink (RQ-03) | Gerald |
 | ButtonLED – Button_Read / SW1 (RQ-04) | Adrian |
-| ButtonLED – LED_Cycle / SW2 (RQ-05) | Alfredo |
+| ButtonLED – LED_Cycle / SW2 (RQ-05) | Alfredo Regla |
 | UART0 – Init (RQ-06) | Paris |
 | UART0 – SendChar (RQ-07) | Gerald |
 | UART0 – SendString (RQ-08) | Adrian |
-| UART0 – SendInteger (RQ-09) | Alfredo |
+| UART0 – SendInteger (RQ-09) | Alfredo Regla |
 | UART0 – SendFloat (RQ-10) | Paris |
 | I2C – Init (RQ-11) | Gerald |
 | I2C – Write (RQ-12) | Adrian |
-| I2C – Read (RQ-13) | Alfredo |
+| I2C – Read (RQ-13) | Alfredo Regla |
 | TCS34725 – Init (RQ-14) | Paris |
 | TCS34725 – ReadColor (RQ-15) | Gerald |
 | MPU6050 – Init (RQ-16) | Adrian |
-| MPU6050 – ReadAccel (RQ-17) | Alfredo |
+| MPU6050 – ReadAccel (RQ-17) | Alfredo Regla |
 | LCD – Init (RQ-18) | Paris |
 | Servo – PWM_Init (RQ-19) | Gerald |
 | Servo – SetAngle (RQ-20) | Adrian |
-| Main Loop / Timing (CN-01) | Alfredo |
+| Main Loop / Timing (CN-01) | Alfredo Regla |
 | I2C Error Handling (CN-02) | Paris |
 | UART Baud Verification (CN-03) | Gerald |
 | Design Decision – I2C Bus (DES-01) | Adrian |
-| PWM Module Selection (DES-02) | Alfredo |
+| PWM Module Selection (DES-02) | Alfredo Regla |
 | Full System Integration (SYS-01) | Paris |
 | Continuous Sampling Validation (SYS-02) | Gerald |
 
@@ -256,12 +256,12 @@ We started with the timer since everything needs delays. Then UART so we could s
 
 | Integration Step | Owner |
 |-----------------|-------|
-| WTIMER + UART bring-up | Alfredo, Paris |
+| WTIMER + UART bring-up | Alfredo Regla, Paris |
 | I2C bus bring-up | Gerald, Adrian |
 | MPU6050 + TCS34725 integration | Adrian, Paris |
 | LCD integration | Paris |
 | Servo integration | Gerald, Adrian |
-| Full system validation | Alfredo, Gerald |
+| Full system validation | Alfredo Regla, Gerald |
 
 ---
 
