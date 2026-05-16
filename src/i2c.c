@@ -1,3 +1,6 @@
+﻿// Author: Alfredo Regla
+// Course: CECS 447 - Embedded Systems
+
 /*
  * I2C.c
  *
